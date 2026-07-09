@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Roof Assessment — Pinnacle Roofing & Restoration</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal: #0e958b;
+    --teal-dark: #0a7069;
+    --teal-light: #e6f5f4;
+    --charcoal: #1c1c1c;
+    --mid: #4a4a4a;
+    --soft: #f7f7f5;
+    --white: #ffffff;
+    --rule: #d9d9d9;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--soft);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav img {
+    height: 44px;
+    width: auto;
+  }
+
+  nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--teal);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--charcoal);
+    color: var(--white);
+    text-align: center;
+    padding: 56px 24px 48px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 640px;
+    margin: 0 auto 20px;
+    color: #ffffff;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* VIDEO */
+  .video-section {
+    background: #111;
+    padding: 48px 24px 56px;
+  }
+
+  .video-outer {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1.5px solid var(--teal);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+
+  .video-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding: 14px 0 10px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .video-title {
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0 24px 14px;
+    line-height: 1.4;
+  }
+
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  .video-sub {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+    padding: 10px 0 14px;
+  }
+
+  /* BRIDGE */
+  .bridge {
+    background: var(--teal);
+    color: var(--white);
+    text-align: center;
+    padding: 36px 24px;
+  }
+
+  .bridge p {
+    font-family: 'Lora', serif;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 400;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* TRUST STRIP */
+  .trust {
+    background: var(--white);
+    padding: 40px 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .trust-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    text-align: center;
+  }
+
+  .trust-item strong {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .trust-item span {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.4;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    background: var(--soft);
+    padding: 56px 24px;
+  }
+
+  .testimonials h2 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 36px;
+    color: var(--charcoal);
+  }
+
+  .testimonial-grid {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 24px;
+  }
+
+  .testimonial-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--mid);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .testimonial-card cite {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--charcoal);
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* SCHEDULE SECTION */
+  .schedule {
+    background: var(--white);
+    padding: 64px 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .schedule-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .schedule-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+
+  .schedule h2 {
+    font-family: 'Lora', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    color: var(--charcoal);
+  }
+
+  .schedule p {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 36px;
+  }
+
+  .calendly-placeholder {
+    background: var(--teal-light);
+    border: 2px dashed var(--teal);
+    border-radius: 6px;
+    padding: 48px 24px;
+    color: var(--teal-dark);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+
+  footer strong {
+    color: rgba(255,255,255,0.7);
+  }
+
+  .carousel-wrap { max-width: 760px; margin: 0 auto; position: relative; overflow: hidden; }
+  .carousel-track { display: flex; transition: transform 0.5s ease; }
+  .carousel-slide { min-width: 100%; padding: 0 48px; box-sizing: border-box; }
+  .carousel-card { background: var(--white); border: 1px solid var(--rule); border-radius: 6px; padding: 32px 36px; min-height: 160px; display: flex; flex-direction: column; justify-content: space-between; }
+  .carousel-card p { font-size: 15px; line-height: 1.7; color: var(--mid); font-style: italic; margin-bottom: 20px; }
+  .carousel-card cite { font-size: 12px; font-weight: 600; color: var(--teal); font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; }
+  .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+  .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rule); border: none; cursor: pointer; padding: 0; transition: background 0.3s; }
+  .carousel-dot.active { background: var(--teal); }
+  .carousel-btn { position: absolute; top: 45%; transform: translateY(-50%); background: var(--white); border: 1px solid var(--rule); border-radius: 50%; width: 36px; height: 36px; font-size: 16px; cursor: pointer; color: var(--teal); display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; z-index: 2; }
+  .carousel-btn:hover { border-color: var(--teal); }
+  .carousel-btn.prev { left: 0; }
+  .carousel-btn.next { right: 0; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 44px 20px 36px; }
+    .trust-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="https://www.newroofmemphis.com/wp-content/uploads/2017/06/logo.png" alt="Pinnacle Roofing & Restoration">
+  <a href="tel:9014385084">(901) 438-5084</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Memphis · Germantown · Collierville · Bartlett</p>
+  <h1>The Memphis Homeowner's Guide to Replacing a Roof the Right Way</h1>
+  <p>Watch the short video below — then pick a time for your free roof assessment.</p>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-wrap">
+    <!-- REPLACE src WITH YOUR YOUTUBE OR VIMEO EMBED URL -->
+    <!-- YouTube example: https://www.youtube.com/embed/YOUR_VIDEO_ID -->
+    <!-- Vimeo example: https://player.vimeo.com/video/YOUR_VIDEO_ID -->
+    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1208226212?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Pinnacle Roofing: The Smart Way vs. The Stressful Way to Choose a Roofer"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+  </div>
+</section>
+
+<!-- BRIDGE -->
+<div class="bridge">
+  <p>Ready for a straight answer about your roof?<br>Pick a time below.</p>
+</div>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <a href="https://www.bbb.org/us/ms/madison/profile/roofing-contractors/pinnacle-roofing-and-restoration-llc-0523-235890285" target="_blank" rel="noopener" style="text-decoration:none; display:block;">
+        <strong style="color: #0a7069;">A+</strong>
+        <span style="color: #0a7069;">BBB Rated<br>Pinnacle Roofing & Restoration</span>
+      </a>
+    </div>
+    <div class="trust-item">
+      <strong>5,000+</strong>
+      <span>Roofs replaced<br>in the Memphis area</span>
+    </div>
+    <div class="trust-item">
+      <a href="https://www.newroofmemphis.com/testimonials/" target="_blank" rel="noopener" style="text-decoration:none; display:block;">
+        <strong style="color: #0a7069;">15+ yrs</strong>
+        <span style="color: #0a7069;">Serving Shelby County<br>homeowners</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS CAROUSEL -->
+<section class="testimonials">
+  <h2><a href="https://www.newroofmemphis.com/testimonials/" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; border-bottom: 2px solid var(--teal); padding-bottom:3px;">What Memphis homeowners say</a></h2>
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="carouselTrack"></div>
+    <div class="carousel-dots" id="carouselDots"></div>
+    <button class="carousel-btn prev" id="prevBtn" aria-label="Previous">&#8592;</button>
+    <button class="carousel-btn next" id="nextBtn" aria-label="Next">&#8594;</button>
+  </div>
+</section>
+
+<script>
+  const testimonials = [
+    { text: "Brandon and his crew are professional and kind, a combination not always found in the service industry. He replaced my roof last year and put in roof vents which we previously had been lacking. No more unbearable summer attic temps, my new roof looks great, and has withstood all the spring storms. Their clean up process exceeded my expectations.", cite: "S. Hill" },
+    { text: "Fantastic customer service and quality craftsmanship. Highly recommend! Fast, friendly, and a great price!", cite: "Haley Miles" },
+    { text: "After using Brandon to replace the roof at my house I decided to let him fix a leak at my business. I had several different contractors out trying to fix it before and none succeeded. Brandon and his guys had it fixed the first time they came out. I would recommend them for both commercial and residential roofs.", cite: "Richard Smith" },
+    { text: "Pinnacle Roofing is great. I trusted them to stop a major roof leak on my home. I have all the confidence in the world that they will do what they say and always leave the customer satisfied. I do not hesitate to refer them to my friends, family and customers.", cite: "Hunter Rasbach" },
+    { text: "It is often said there is no such thing as a perfect job. If that is true these guys come very close. Not only is their work of the highest standards but they are always on site when they say they will be. The owner always calls to make sure everything was done correctly and if we are 100% satisfied. That is the mark of a fine company.", cite: "Michael Anderson" },
+    { text: "Pinnacle Roofing & Restoration is one of a kind. Every person I have referred has called me back thanking me for recommending such a great company. From their promptness to showing up on time, they have impressed my entire circle of friends. Thank you for raising the bar.", cite: "Dapo Odusanya" },
+    { text: "Last fall I had a major leak develop in my roof during a storm. Brandon was out within a short period of time and put a tarp over the area in the rain. His workers were respectful and speedy. He was able to get my whole roof replaced and all I had to pay was my deductible. I would not hesitate to do business with Brandon again.", cite: "J. Adelman" },
+    { text: "He is affordable and honest. I used him to fix a leak in my dining room which was a builder's defect. He made it easy, quick and painless. I have referred him to several of my friends and they couldn't be happier with his work. I will continue to use Brandon on all my building projects.", cite: "J. Robinson" },
+    { text: "Brandon and crew are not your usual roofers. They go above and beyond to provide the best service possible.", cite: "S. Pirani" }
+  ];
+
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    let current = 0;
+    let timer;
+
+    testimonials.forEach((t, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'carousel-slide';
+      slide.innerHTML = '<div class="carousel-card"><p>\u201c' + t.text + '\u201d</p><cite>\u2014 ' + t.cite + '</cite></div>';
+      track.appendChild(slide);
+
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(n) {
+      current = (n + testimonials.length) % testimonials.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      resetTimer();
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 6000);
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+
+    resetTimer();
+  })();
+</script>
+
+<!-- SCHEDULE -->
+<section class="schedule">
+  <div class="schedule-inner">
+    <p class="schedule-eyebrow">Free · No Obligation · No Sales Pressure</p>
+    <h2>Schedule Your Free Roof Assessment</h2>
+    <p>Pick a time that works for you. Brandon's team will come out, give you a straight answer about your roof, and tell you exactly what — if anything — needs to be done.</p>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScebbdpOS78SVmtJrDI6k7S0sTWzhBGVK0KoQHFvrqPigeglw/viewform?embedded=true" width="100%" height="1508" frameborder="0" marginheight="0" marginwidth="0" style="border:none; max-width:640px;">Loading…</iframe>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Pinnacle Roofing & Restoration</strong><br>
+  Memphis, TN &nbsp;·&nbsp; <a href="tel:9014385084">(901) 438-5084</a><br><br>
+  © Pinnacle Roofing & Restoration. All Rights Reserved.
+</footer>
+
+</body>
+</html>
