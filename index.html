@@ -3,256 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Roof Assessment — Memphis & Surrounding Areas</title>
+<title>Free Roof Assessment — Pinnacle Roofing & Restoration</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal:    #0e958b;
+    --teal-dk: #0a7069;
+    --ink:     #0e1a18;
+    --cream:   #f5f3ee;
+    --muted:   #5a6a68;
+    --rule:    #d1cfc9;
+    --white:   #ffffff;
+  }
+  html { scroll-behavior: smooth; }
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #1a1a1a;
-    color: #f0ece4;
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
 
-  /* TOP BAR */
-  .topbar {
-    background: #111;
-    padding: 16px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid #b8a98a;
-  }
-  .topbar-logo {
-    font-size: 15px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #f0ece4;
-    font-weight: bold;
-  }
-  .topbar-right {
-    font-size: 14px;
-    color: #b8a98a;
-  }
-
-  /* HERO */
-  .hero {
-    padding: 52px 32px 36px;
-    text-align: center;
-    max-width: 860px;
-    margin: 0 auto;
-  }
-  .hero h1 {
-    font-size: clamp(28px, 4vw, 46px);
-    font-weight: bold;
-    line-height: 1.2;
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-  .hero p {
-    font-size: 18px;
-    color: #aaa;
-    line-height: 1.7;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  /* MAIN CONTENT */
-  .main {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 32px 60px;
+  /* ── LAYOUT ── */
+  .page {
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
   }
 
-  /* COLUMN HEADERS — big and obvious */
-  .col-header {
+  /* ── LEFT PANEL ── */
+  .left {
+    background: var(--ink);
+    padding: 56px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 30% 60%, rgba(14,149,139,0.12), transparent 70%);
+    pointer-events: none;
+  }
+
+  .left-content { position: relative; z-index: 1; }
+
+  .logo-wrap {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #b8a98a;
-    color: #111;
-    padding: 14px 20px;
-    margin-bottom: 0;
+    margin-bottom: 56px;
   }
-  .col-header-number {
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 1;
-    color: #111;
+
+  .logo-img {
+    height: 40px;
+    width: auto;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 18px;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 3.5vw, 52px);
+    font-weight: 500;
+    line-height: 1.08;
+    color: var(--white);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .subline {
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 48px;
+    max-width: 380px;
+  }
+
+  /* Trust strip */
+  .trust {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .trust-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--teal);
+    margin-top: 7px;
     flex-shrink: 0;
   }
-  .col-header-text {
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #111;
-    line-height: 1.2;
+
+  .trust-text {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.55);
   }
 
-  /* VIDEO */
-  .video-wrap {
-    padding: 56.25% 0 0 0;
-    position: relative;
-    background: #000;
+  .trust-text strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
   }
-  .video-wrap iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
+
+  /* Testimonial */
+  .testimonial {
+    border-left: 2px solid var(--teal);
+    padding-left: 18px;
+    margin-top: auto;
   }
-  .video-caption {
-    font-size: 15px;
-    color: #777;
-    margin-top: 14px;
+
+  .testimonial p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
     line-height: 1.6;
-    padding: 0 4px;
-  }
-
-  /* FORM */
-  .form-wrap {
-    background: #fff;
-    overflow: hidden;
-  }
-  .form-wrap iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
-    display: block;
-  }
-
-  /* TRUST STRIP */
-  .trust {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 40px 32px 52px;
-    border-top: 1px solid #2a2a2a;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .trust-item {
-    text-align: center;
-    padding: 24px 16px;
-    border: 1px solid #2a2a2a;
-  }
-  .trust-number {
-    font-size: 36px;
-    font-weight: bold;
-    color: #b8a98a;
     margin-bottom: 8px;
   }
-  .trust-desc {
-    font-size: 15px;
-    color: #888;
-    line-height: 1.5;
+
+  .testimonial cite {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-style: normal;
   }
 
-  /* FOOTER */
-  footer {
-    background: #111;
-    border-top: 1px solid #2a2a2a;
-    padding: 20px 32px;
-    text-align: center;
-    font-size: 13px;
-    color: #444;
+  /* ── RIGHT PANEL ── */
+  .right {
+    background: var(--white);
+    padding: 56px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  /* MOBILE */
-  @media (max-width: 720px) {
-    .main {
-      grid-template-columns: 1fr;
-      gap: 48px;
-      padding: 0 20px 48px;
-    }
-    .trust {
-      grid-template-columns: 1fr;
-      padding: 32px 20px 40px;
-    }
-    .hero {
-      padding: 36px 20px 28px;
-    }
-    .topbar {
-      padding: 14px 20px;
-      flex-direction: column;
-      gap: 6px;
-      text-align: center;
-    }
-    .col-header-text {
-      font-size: 16px;
-    }
+  .form-header {
+    margin-bottom: 32px;
+  }
+
+  .form-label-top {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 2.5vw, 34px);
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .form-title em {
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  /* Form embed */
+  .form-wrap {
+    width: 100%;
+  }
+
+  .form-wrap iframe {
+    width: 100%;
+    border: none;
+    min-height: 620px;
+  }
+
+  /* Footer note */
+  .form-note {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 780px) {
+    .page { grid-template-columns: 1fr; }
+    .left { padding: 40px 28px; }
+    .right { padding: 40px 28px; }
+    .testimonial { display: none; }
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-logo">Pinnacle Roofing &amp; Restoration</div>
-  <div class="topbar-right">Memphis &amp; Surrounding Areas</div>
-</div>
+<div class="page">
 
-<div class="hero">
-  <h1>Know exactly what's happening on your roof — before it becomes a problem.</h1>
-  <p>No obligation. No sales pressure. Just an honest assessment from a local Memphis team.</p>
-</div>
+  <!-- LEFT -->
+  <div class="left">
+    <div class="left-content">
 
-<div class="main">
+      <div class="logo-wrap">
+        <img src="https://www.newroofmemphis.com/wp-content/uploads/2017/06/logo.png"
+             alt="Pinnacle Roofing & Restoration"
+             class="logo-img"
+             onerror="this.style.display='none'">
+      </div>
 
-  <div class="video-col">
-    <div class="col-header">
-      <div class="col-header-number">1</div>
-      <div class="col-header-text">Watch First &mdash; 3 Minutes</div>
+      <p class="eyebrow">Memphis &nbsp;&middot;&nbsp; Germantown &nbsp;&middot;&nbsp; Collierville &nbsp;&middot;&nbsp; Bartlett</p>
+
+      <h1 class="headline">
+        A straight answer<br>about your roof.<br>
+        <em>No pressure. Free.</em>
+      </h1>
+
+      <p class="subline">
+        Fill out the form and Brandon&rsquo;s team will reach out to schedule your free roof assessment. Takes 30 seconds.
+      </p>
+
+      <div class="trust">
+        <div class="trust-item">
+          <div class="trust-dot"></div>
+          <p class="trust-text"><strong>5,000+ roofs replaced</strong> in the Memphis area</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-dot"></div>
+          <p class="trust-text"><strong><a href="https://www.bbb.org/us/ms/madison/profile/roofing-contractors/pinnacle-roofing-and-restoration-llc-0523-235890285" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:none;">A+ BBB Rated</a></strong> &nbsp;&middot;&nbsp; Pinnacle Roofing & Restoration</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-dot"></div>
+          <p class="trust-text">Owner calls <strong>every customer</strong> after the job is done</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-dot"></div>
+          <p class="trust-text">Serving Shelby County homeowners <strong>for over 15 years</strong></p>
+        </div>
+      </div>
+
     </div>
-    <div class="video-wrap">
-      <iframe
-        src="https://player.vimeo.com/video/1208226212?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        title="Pinnacle Roofing: The Smart Way vs. The Stressful Way to Choose a Roofer">
-      </iframe>
+
+    <div class="testimonial">
+      <p>&ldquo;Every person I have referred has called me back thanking me for recommending such a great company.&rdquo;</p>
+      <cite>Dapo Odusanya &nbsp;&middot;&nbsp; <a href="https://www.newroofmemphis.com/testimonials/" target="_blank" style="color:var(--teal);text-decoration:none;">Read all reviews</a></cite>
     </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <p class="video-caption">Pinnacle Roofing has served Memphis homeowners for over 15 years. See how our assessment process works and what sets us apart.</p>
   </div>
 
-  <div class="form-col">
-    <div class="col-header">
-      <div class="col-header-number">2</div>
-      <div class="col-header-text">Schedule Your Free Assessment</div>
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="form-header">
+      <p class="form-label-top">Free &nbsp;&middot;&nbsp; No obligation &nbsp;&middot;&nbsp; No sales pressure</p>
+      <h2 class="form-title">
+        Schedule your<br><em>free roof assessment.</em>
+      </h2>
     </div>
+
     <div class="form-wrap">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLScebbdpOS78SVmtJrDI6k7S0sTWzhBGVK0KoQHFvrqPigeglw/viewform?embedded=true"
-        title="Schedule a free roof assessment">
-      </iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScebbdpOS78SVmtJrDI6k7S0sTWzhBGVK0KoQHFvrqPigeglw/viewform?embedded=true"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0">Loading&hellip;</iframe>
     </div>
+
+    <p class="form-note">No spam. Your information is only used to schedule your assessment.</p>
   </div>
 
 </div>
-
-<div class="trust">
-  <div class="trust-item">
-    <div class="trust-number">15+</div>
-    <div class="trust-desc">Years serving Memphis homeowners</div>
-  </div>
-  <div class="trust-item">
-    <div class="trust-number">Free</div>
-    <div class="trust-desc">No-obligation assessment, no cost to you</div>
-  </div>
-  <div class="trust-item">
-    <div class="trust-number">Local</div>
-    <div class="trust-desc">Memphis-based team, not a national chain</div>
-  </div>
-</div>
-
-<footer>
-  &copy; 2026 Pinnacle Roofing &amp; Restoration &nbsp;&middot;&nbsp; Memphis, TN
-</footer>
 
 </body>
 </html>
